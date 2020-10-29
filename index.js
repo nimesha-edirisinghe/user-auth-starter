@@ -45,7 +45,7 @@ app.get("/login", (req, res) => {
   });
 });
 
-app.post("/save", verifyToken, (req, res) => {
+app.post("/save-data", verifyToken, (req, res) => {
   jwt.verify(req.token, "secretKey", function (err, decoded) {
     if (err) {
       res.json({
