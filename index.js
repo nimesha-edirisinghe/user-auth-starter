@@ -2,8 +2,10 @@ const { json } = require("express");
 const express = require("express");
 const jwt = require("jsonwebtoken");
 
+// create a express app
 const app = express();
 
+// verify token from header
 const verifyToken = (req, res, next) => {
   if (
     typeof req.headers["authorization"] != undefined &&
