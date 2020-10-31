@@ -1,4 +1,3 @@
-const { json } = require("express");
 const express = require("express");
 const jwt = require("jsonwebtoken");
 
@@ -11,8 +10,11 @@ const verifyToken = (req, res, next) => {
     typeof req.headers["authorization"] != undefined &&
     req.headers["authorization"]
   ) {
+    // split token header
     let tokenHeader = req.headers["authorization"].split(" ")[1];
     console.log(tokenHeader);
+
+    // validate token header
     if (tokenHeader) {
       req.token = tokenHeader;
       next();
